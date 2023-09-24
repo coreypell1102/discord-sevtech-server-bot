@@ -1,3 +1,9 @@
+- [Welcome To my Discord Server Admin Bot Series!](#welcome-to-my-discord-server-admin-bot-series)
+- [Setup](#setup)
+- [Bot Commands](#bot-commands)
+
+
+
 # Welcome To my Discord Server Admin Bot Series! #
 
 This is just one of my discord bots that are used to manage ec2 instances remotely through the use of a discord bot!
