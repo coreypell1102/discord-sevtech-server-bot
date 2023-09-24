@@ -85,11 +85,26 @@ client.on('messageCreate', async (message) => {
             '!start-sevtech - Start the SevTech Minecraft server',
             '!stop-sevtech - Stop the SevTech Minecraft server',
             '!restart-sevtech - Restart the SevTech Minecraft server',
+            '!status-sevtech - Resturns the status of the SevTech Minecraft server',
             '!help-sevtech - List available commands',
         ];
         const commandList = availableCommands.join('\n');
         message.reply(`Here are the availabe commands:\n${commandList}`);
 
+    } else if (message.content.startsWith('!status-sevtech')) {
+        const instanceId = process.env.INSTANCE_ID;
+        const params = {
+            InstanceIds: [instanceId],
+        };
+
+        const data = await ec2.describeInstances(params).promise();
+        const instance = data.Reservations[0].Instances[0];
+
+        if (instance.State.Name === 'running') {
+            message.reply(`The SevTech Minecraft server is running.`);
+        } else {
+            message.reply(`The SevTech Minecraft server is not running.`);
+        }
     }
 });
 
