@@ -9,6 +9,7 @@ For this specific code, the bot is managing an ec2 instance running an SecTech: 
 # Setup #
 
 For the setup up you will need node.js and npm installed
+
 Simply follow the commands below to get set up
 
 1. mkdir /opt/sevtech && cd /opt/sevtech
